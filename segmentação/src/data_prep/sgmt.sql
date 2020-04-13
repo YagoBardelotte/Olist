@@ -24,8 +24,8 @@ FROM (
         SELECT T2.seller_id,
                 SUM(T2.price) AS RECEITA_TOTAL,
                 COUNT(DISTINCT T1.order_id) AS QTDE_PEDIDOS,
-                COUNT(T2.product_id) AS QTDE_PDTS,
-                COUNT(DISTINCT T2.product_id) AS QTDE_PDTS_DIST,
+                COUNT(T2.product_id) AS QTDE_PRODUTOS,
+                COUNT(DISTINCT T2.product_id) AS QTDE_PRODUTOS_DIST,
                 MIN( CAST( JULIANDAY('{date_end}') - JULIANDAY(T1.order_approved_at ) AS INT)) AS QTDE_DIAS_ULT_VENDA,
                 MAX( CAST(JULIANDAY('{date_end}') - JULIANDAY(DT_INICIO) AS INT)) AS QTD_DIAS_BASE
 
